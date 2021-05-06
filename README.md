@@ -14,7 +14,7 @@ Este jogo usa caixas de seleção como botões e inclui 8 níveis pré-organizad
 Dependências
 ------------
 
-* Python 2.7
+* Python 3.9.2
 * Tkinter
 
 Uso
