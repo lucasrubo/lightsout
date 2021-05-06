@@ -5,7 +5,7 @@ Jogo de puzzle simples
 
 Uma implementação Python do clássico jogo de quebra-cabeça 'Lights Out' usando o pacote Tkinter GUI.
 
-![Lights Out Screenshot](http://img585.imageshack.us/img585/9475/hqna.png)
+![Lights Out Screenshot](https://raw.githubusercontent.com/lucasrubo/lightsout/main/imagem.jpeg)
 
 'Lights Out' foi originalmente lançado pela Tiger Toys em 1995 como um jogo de quebra-cabeça eletrônico. Possui uma grade 5 por 5 de botões que podem estar em um de dois estados, acesos ou apagados. Pressionar um botão alterna o estado desse botão, bem como dos quatro botões diretamente adjacentes a ele. O jogo começa com certos botões acesos e o jogador pressiona botões com o objetivo de fazer com que todos os botões fiquem apagados, daí o nome 'Luzes apagadas'.
 
