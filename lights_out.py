@@ -21,24 +21,15 @@ class App:
         Frame(self.wrapper).grid(pady=2)
 
         self.levels = [
-            [1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1,
-             1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1],
-            [0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1,
-             1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1,
-             1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1],
-            [0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0,
-             1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0],
-            [0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0,
-             1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1],
-            [0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1,
-             1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-             1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1,
-             1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0],
-            [1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0,
-             0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1]
+            [1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1],
+            [0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1],
+            [0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0],
+            [0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1],
+            [0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0],
+            [1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1]
         ]
 
         self.reductions = [
@@ -55,14 +46,12 @@ class App:
             for col in range(5):
                 self.board[row*5+col] = Checkbutton(self.wrapper)
                 self.board[row*5+col].grid(row=row+1, column=col)
-                self.board[row*5+col].config(command=lambda row=row,
-                                             col=col: self.switch(row, col))
+                self.board[row*5+col].config(command=lambda row=row, col=col: self.switch(row, col))
 
         self.msg = Label(self.root)
         self.msg.grid(row=3)
 
-        self.action_btn = Button(self.root, text='Reset Game',
-                                 command=self.reset)
+        self.action_btn = Button(self.root, text='Resetar o Jogo',command=self.reset)
         self.action_btn.grid(row=4)
         Frame(self.root).grid(pady=5)
 
@@ -70,7 +59,7 @@ class App:
         self.root.mainloop()
 
     def initialise(self):
-        self.action_btn.config(text='Reset Game', command=self.reset)
+        self.action_btn.config(text='Resetar o Jogo', command=self.reset)
         level_text = 'Level: ' + str(self.level + 1)
         self.level_label.config(text=level_text)
         for i in range(25):
@@ -122,8 +111,8 @@ class App:
 
     def victory_check(self):
         if True not in self.values:
-            self.msg.config(text='Well done, you won!')
-            self.action_btn.config(text='Next Game', command=self.initialise)
+            self.msg.config(text='Parabéns você venceu!')
+            self.action_btn.config(text='Próximo Game', command=self.initialise)
             for i in range(25):
                 self.board[i].config(state='disabled')
             self.level += 1
