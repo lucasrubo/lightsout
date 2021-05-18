@@ -1,6 +1,8 @@
 # Lights Out
 Jogo de puzzle simples
+
 Grupo:
+
 Lucas Gabriel Rubo 		RA: N41059-0
 
 Wellington Luiz Pereira Nalon 	RA: F043CD-2
